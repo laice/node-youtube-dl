@@ -4,6 +4,7 @@ let ChildProcess = require('child_process')
 let FS = require('fs')
 let HTTPS = require('https')
 let Request = require('request')
+let path = require('path');
 
 class YTDL{
   static download(ID, Quality){
@@ -21,7 +22,7 @@ class YTDL{
   static info_twitch(clip){
     let url = clip.url.split("?");
     url = url[0];
-    let CookiePath = `/tmp/clip-${clip.id}`
+    let CookiePath = path.join(__dirname, 'tmp', `clip-${clip.id}`);
     let Info = {URL: '', Cookies: ''}
     let DL = new Promise(function(Resolve, Reject){
       let Output = {stdout: [], stderr: []}
