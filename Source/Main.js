@@ -25,7 +25,7 @@ class YTDL{
     let Info = {URL: '', Cookies: ''}
     let DL = new Promise(function(Resolve, Reject){
       let Output = {stdout: [], stderr: []}
-      let Process = ChildProcess.spawn('youtube-dl', ['-f', Quality, '-g', '--cookies', CookiePath, url]);
+      let Process = ChildProcess.spawn('youtube-dl', ['-g', '--cookies', CookiePath, url]);
       let Timeout
       Process.exited = false
       Process.stdout.on('data', function(data){
