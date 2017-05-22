@@ -19,7 +19,7 @@ class YTDL{
   }
 
   static info_twitch(clip){
-    let url = clip.split("?");
+    let url = clip.url.split("?");
     url = url[0];
     let CookiePath = `/tmp/clip-${clip.id}`
     let Info = {URL: '', Cookies: ''}
